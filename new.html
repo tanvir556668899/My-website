@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Mini App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 10px auto;
+            padding: 20px;
+            max-width: 400px;
+        }
+        .card h2 {
+            color: #0088cc;
+        }
+        .btn {
+            background: #0088cc;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover {
+            background: #006699;
+        }
+        .points {
+            font-size: 24px;
+            color: #333;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>👤 ইউজার আইডি: @tanvir</h2>
+        <div class="points">💰 পয়েন্ট: <span id="point">3000</span></div>
+
+        <button class="btn" onclick="watchAd()">📺 Watch Ad (150 Point)</button>
+        <button class="btn" onclick="openTask()">✅ Task Links (300 Point)</button>
+        <button class="btn" onclick="withdraw()">💸 Withdraw</button>
+    </div>
+
+    <script>
+        let points = 3000;
+
+        function watchAd() {
+            points += 150;
+            document.getElementById('point').innerText = points;
+            alert('Ad দেখা শেষ ✅ +150 পয়েন্ট');
+        }
+
+        function openTask() {
+            points += 300;
+            document.getElementById('point').innerText = points;
+            alert('Task Complete ✅ +300 পয়েন্ট');
+        }
+
+        function withdraw() {
+            if (points >= 7000) {
+                alert('✅ Withdraw Request Sent');
+                points -= 7000;
+                document.getElementById('point').innerText = points;
+            } else {
+                alert('❌ পর্যাপ্ত পয়েন্ট নেই (৭০০০ পয়েন্ট লাগবে)');
+            }
+        }
+    </script>
+
+</body>
+</html>
